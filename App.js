@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StatusBar, Text, View, StyleSheet, SafeAreaView, Platform } from 'react-native';
 import Constants from 'expo-constants';
+import { Searchbar } from 'react-native-paper';
 
 // You can import from local files
 import AssetExample from './components/AssetExample';
@@ -10,17 +11,17 @@ import AssetExample from './components/AssetExample';
 
 const isAndroid = Platform.OS === 'android';
 
+
 export default function App() {
-  const [focusSubject, setFocusSubject] = useState("Hello World");
-  return (
+
+   return (
     <>
-      <SafeAreaView style={{ flex: 1, marginTop: StatusBar.currentHeight }}>
-        <View style={{ padding: 16, backgroundColor: "blue" }} >
-          <Text>
-            Search
-        </Text>
+      <SafeAreaView style={styles.container}>
+        <View  style={styles.search}>
+     <Searchbar></Searchbar>
         </View>
-        <View style={{ flex: 1, padding: 16, backgroundColor: "red" }}>
+    
+        <View style={styles.list}>
           <Text>
             List
           </Text>
@@ -36,16 +37,12 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
-    padding: 8,
+    flex: 1, marginTop: StatusBar.currentHeight
   },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
+  search: {
+     padding: 16,  
+  },
+  list: {
+    flex: 1, padding: 16, backgroundColor: "blue" 
   },
 });
