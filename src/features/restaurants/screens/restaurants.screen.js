@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useContext } from "react";
 import { Searchbar, ActivityIndicator, Colors } from "react-native-paper";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
