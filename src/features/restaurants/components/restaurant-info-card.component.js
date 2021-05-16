@@ -5,27 +5,26 @@ import open from "../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import {
-  RestaurantCard, 
+  RestaurantCard,
   RestaurantCardCover,
   Address,
   Info,
   Rating,
   OpenIcon,
-  Section
-
-
-} from "../components/restaurant-info-card-styles.component"
+  Section,
+} from "../components/restaurant-info-card-styles.component";
 
 export const RestaurantsInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Pizzare",
-    icon,
+
     photos = [
       "https://thumb.tildacdn.com/tild3564-3039-4366-b464-666535626662/-/format/webp/pizza.png",
     ],
-    address = "Dunckerstrasse 8",
+    vicinity = "Dunckerstrasse 8",
     isOpenNow = true,
     rating = 4,
+    placeId,
     isClosedTemporarily = true,
   } = restaurant;
 
@@ -37,8 +36,13 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
         <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml xml={star} height={20} width={20} />
+            {ratingArray.map((_, i) => (
+              <SvgXml
+                key={`star-${placeId}-${i}`}
+                xml={star}
+                height={20}
+                width={20}
+              />
             ))}
           </Rating>
 
@@ -54,7 +58,7 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
           </OpenIcon>
         </Section>
 
-        <Address>{address}</Address>
+        <Address>{vicinity}</Address>
       </Info>
     </RestaurantCard>
   );

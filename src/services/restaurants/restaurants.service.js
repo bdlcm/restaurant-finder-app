@@ -1,20 +1,20 @@
-import { mockImages, mocks } from "./mock";
-export const restaurantsRequest = (location = "37.7749295,-122.4194155") => {
+import { mocks, mockImages } from "./mock";
+import camelize from "camelize";
+
+export const restaurantsRequest = (location) => {
   return new Promise((resolve, reject) => {
     const mock = mocks[location];
     if (!mock) {
-      reject("no location found");
+      reject("not found");
     }
     resolve(mock);
   });
 };
 
-
-
 export const restaurantsTransform = ({ results = [] }) => {
-  const mapResult = results.map((restaurant) => {
+  const mapResults = results.map((restaurant) => {
     restaurant.photos = restaurant.photos.map((p) => {
-      return mockImages[Math.ceil(Math.random() * mockImages.length - 1)];
+      return mockImages[Math.ceil(Math.random() * (mockImages.length - 1))];
     });
 
     return {
@@ -24,7 +24,5 @@ export const restaurantsTransform = ({ results = [] }) => {
     };
   });
 
-  // const mapResult = camelize(results.length);
-
-  return mapResult;
+  return camelize(mapResults);
 };
