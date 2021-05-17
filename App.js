@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { theme } from './src/infrastructure/theme';
  import { ThemeProvider } from 'styled-components';
