@@ -7,10 +7,18 @@ import { RestaurantsContext } from "../../../services/restaurants/restaurants.co
 
 import { Search } from "../components/search.component";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export const RestaurantsScreen = () => {
+import { List } from "react-native-paper";
+
+
+export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
 
+  const [expanded, setExpanded] = React.useState(true);
+
+  const handlePress = () => setExpanded(!expanded);
+  
   return (
     <SafeArea>
       {isLoading && (
@@ -28,7 +36,15 @@ export const RestaurantsScreen = () => {
       <FlatList
         data={restaurants}
         renderItem={({ item }) => {
-          return <RestaurantsInfoCard restaurant={item} />;
+          return (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("RestaurantDetail", { restaurant: item })
+              }
+            >
+              <RestaurantsInfoCard restaurant={item} />
+            </TouchableOpacity>
+          );
         }}
         keyExtractor={(item) => item.name}
         contentContainerStyle={{ padding: 16 }}
