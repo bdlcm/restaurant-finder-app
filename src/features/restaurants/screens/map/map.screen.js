@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import MapView from "react-native-maps";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
 import { LocationContext } from "../../../../services/location/location.context";
+import { RestaurantsContext } from "../../../../services/restaurants/restaurants.context";
+
 import { useEffect } from "react/cjs/react.development";
 import { Marker } from "react-native-maps";
 import styled from "styled-components/native";
@@ -12,18 +14,36 @@ const Map = styled(MapView)`
   width: 100%;
 `;
 
-export const MapScreen = ({ navigation }) => (
-  // const { location } = useContext(LocationContext);
+export const MapScreen = () => {
+  const { location } = useContext(LocationContext);
+  const { restaurants = [] } = useContext(RestaurantsContext);
 
-  <>
-    <Search />
-    <Map
-      initialRegion={{
-        latitude: 37.78825,
-        longitude: -122.4324,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      }}
-    />
-  </>
-);
+  const [latDelta, setLatDelta] = useState(0);
+
+  const { lat, lng, viewport } = location;
+
+  useEffect(() => {
+    const northeastLat = viewport.northeast.lat;
+    const southwestLat = viewport.southwest.lat;
+
+    setLatDelta(northeastLat - southwestLat);
+  }, [location, viewport]);
+
+  return (
+    <>
+      <Search />
+      <Map
+        region={{
+          latitude: lat,
+          longitude: lng,
+          latitudeDelta: latDelta,
+          longitudeDelta: 0.04,
+        }}
+      >
+        {restaurants.map((restaurant) => {
+          return null;
+        })}
+      </Map>
+    </>
+  );
+};

@@ -9,16 +9,14 @@ import { Search } from "../components/search.component";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-import { List } from "react-native-paper";
-
+ 
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
 
   const [expanded, setExpanded] = React.useState(true);
 
-  const handlePress = () => setExpanded(!expanded);
-  
+   
   return (
     <SafeArea>
       {isLoading && (
