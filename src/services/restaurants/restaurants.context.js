@@ -7,7 +7,7 @@ import {
 
 import { LocationContext } from "../location/location.context";
 
-export const RestaurantsContext = createContext();
+export const RestaurantsContext = React.createContext();
 
 export const RestaurantsContextProvider = ({ children }) => {
   const [restaurants, setRestaurants] = useState([]);

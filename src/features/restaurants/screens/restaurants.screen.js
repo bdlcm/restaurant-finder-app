@@ -3,20 +3,19 @@ import React, { useContext } from "react";
 import { ActivityIndicator, Colors } from "react-native-paper";
 import { SafeArea } from "../../../components/utility/safe-area.components";
 import { FlatList, View } from "react-native";
+import { FavoritesContext } from "../../../services/favorites/favorites.context";
+
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 import { Search } from "../components/search.component";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
- 
-
 export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
-
   const [expanded, setExpanded] = React.useState(true);
+  const { favorites } = useContext(FavoritesContext);
 
-   
   return (
     <SafeArea>
       {isLoading && (

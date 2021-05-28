@@ -13,6 +13,7 @@ import {
   OpenIcon,
   Section,
 } from "../components/restaurant-info-card-styles.component";
+import { Favorites } from "../../../components/favorites/favorites.component";
 
 export const RestaurantsInfoCard = ({ restaurant = {} }) => {
   const {
@@ -31,6 +32,7 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
   const ratingArray = Array.from(new Array(Math.floor(rating)));
   return (
     <RestaurantCard>
+      <Favorites />
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>
