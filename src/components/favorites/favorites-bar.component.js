@@ -15,24 +15,26 @@ export const FavoritesBar = ({ favorites, navigation }) => {
   if (!favorites.length) {
     return null;
   }
-  <FavesWrapper>
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-      {favorites.map((restaurant) => {
-        const key = restaurant.name;
-        return (
-          <Spacer key={key} position="left" size="large">
-            <TouchableOpacity
-              onPress={() => {
-                navigation("RestaurantDetail", {
-                  restaurant: restaurant,
-                });
-              }}
-            >
-              <CompactView restaurant={restaurant} s />
-            </TouchableOpacity>
-          </Spacer>
-        );
-      })}
-    </ScrollView>
-  </FavesWrapper>;
+  return (
+    <FavesWrapper>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {favorites.map((restaurant) => {
+          const key = restaurant.name;
+          return (
+            <Spacer key={key} position="left" size="large">
+              <TouchableOpacity
+                onPress={() => {
+                  navigation("RestaurantDetail", {
+                    restaurant: restaurant,
+                  });
+                }}
+              >
+                <CompactView restaurant={restaurant} s />
+              </TouchableOpacity>
+            </Spacer>
+          );
+        })}
+      </ScrollView>
+    </FavesWrapper>
+  );
 };

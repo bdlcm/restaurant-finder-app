@@ -44,9 +44,7 @@ export const CompactView = ({ restaurant }) => {
   return (
     <Item>
       <Image source={{ uri: restaurant.photos[0] }} />
-      <FavButton>
-        <Favorites restaurant={restaurant} />
-      </FavButton>
+
       <Text center variant="caption" numberOfLines={3}>
         {restaurant.name}
       </Text>

@@ -11,7 +11,7 @@ import { FavoritesBar } from "../../../components/favorites/favorites-bar.compon
 
 import { Search } from "../components/search.component";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import { Spacer } from "../../../components/spacer/spacer.component";
  
 const LowerTouchableOpacity = styled(TouchableOpacity)`
