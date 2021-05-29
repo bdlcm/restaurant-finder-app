@@ -21,7 +21,6 @@ export const Search = () => {
         placeholder="Search for a location"
         value={searchKeyword}
         icon="map"
-
         onSubmitEditing={() => {
           search(searchKeyword);
         }}

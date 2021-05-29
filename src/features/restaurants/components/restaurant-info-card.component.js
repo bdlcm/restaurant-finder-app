@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
@@ -14,6 +14,8 @@ import {
   Section,
 } from "../components/restaurant-info-card-styles.component";
 import { Favorites } from "../../../components/favorites/favorites.component";
+import { View } from "react-native";
+import { FavoritesContext } from "../../../services/favorites/favorites.context";
 
 export const RestaurantsInfoCard = ({ restaurant = {} }) => {
   const {
@@ -22,7 +24,7 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
     photos = [
       "https://thumb.tildacdn.com/tild3564-3039-4366-b464-666535626662/-/format/webp/pizza.png",
     ],
-    vicinity = "Dunckerstrasse 8",
+    vicinity = "Dunckerstrasse",
     isOpenNow = true,
     rating = 4,
     placeId,
@@ -31,9 +33,12 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
   return (
-    <RestaurantCard>
-      <Favorites />
-      <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+    <RestaurantCard elevation={5}>
+      <View>
+        <Favorites restaurant={restaurant} />
+
+        <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+      </View>
       <Info>
         <Text variant="label">{name}</Text>
         <Section>
@@ -42,8 +47,8 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
               <SvgXml
                 key={`star-${placeId}-${i}`}
                 xml={star}
-                height={20}
                 width={20}
+                height={20}
               />
             ))}
           </Rating>
