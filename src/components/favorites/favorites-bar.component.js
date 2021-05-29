@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components/native";
-import { AntDesign } from "@expo/vector-icons";
 import { TouchableOpacity, ScrollView } from "react-native";
-import { FavoritesContext } from "../../services/favorites/favorites.context";
 import { CompactView } from "../restaurant/compact-view.component";
 import { Spacer } from "../spacer/spacer.component";
+import { Text } from "../typography/text.component";
 
 const FavesWrapper = styled.View`
   padding: 10px;
@@ -17,6 +16,10 @@ export const FavoritesBar = ({ favorites, navigation }) => {
   }
   return (
     <FavesWrapper>
+      <Text style={{ paddingLeft: 20 }} variant="caption">
+        Favorites
+      </Text>
+
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {favorites.map((restaurant) => {
           const key = restaurant.name;
