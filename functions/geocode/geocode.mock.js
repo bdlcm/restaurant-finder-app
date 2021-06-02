@@ -1,5 +1,5 @@
-export const locations = {
-  antwerp: {
+module.exports.locations = {
+  "antwerp": {
     results: [
       {
         geometry: {
