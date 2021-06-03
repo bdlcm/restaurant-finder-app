@@ -6,5 +6,7 @@ Run `Yarn install install` and `Yarn ios` inside the project folder to run on an
 
 Work in progress. View restaurants, their menus, favorite them, see them on a map.
 
+Firebase branch will not on android locally. Firebase functions must be deployed live to test. 
+
 
  
