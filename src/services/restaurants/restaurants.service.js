@@ -1,8 +1,9 @@
- import camelize from "camelize";
+import camelize from "camelize";
+import { host } from "../../utils/env";
 
 export const restaurantsRequest = (location) => {
   return fetch(
-    `http://localhost:5001/mobile-app-2e4bb/us-central1/placesNearby?location=${location}`
+    `${host}/placesNearby?location=${location}`
   ).then((res) => {
     return res.json();
   });
