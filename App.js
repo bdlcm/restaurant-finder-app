@@ -1,71 +1,64 @@
-import React, { useState } from 'react';
-import firebase from 'firebase/app'
-
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { theme } from './src/infrastructure/theme';
- import { ThemeProvider } from 'styled-components';
- import {RestaurantsContextProvider} from "./src/services/restaurants/restaurants.context";
- import {LocationContextProvider} from "./src/services/location/location.context";
- import {FavoritesContextProvider} from "./src/services/favorites/favorites.context";
+import React, { useState, useEffect } from "react";
+import { ThemeProvider } from "styled-components/native";
+import * as firebase from "firebase";
 
-import {Navigation}  from "./src/infrastructure/navigation";
 import {
   useFonts as useOswald,
   Oswald_400Regular,
-} from '@expo-google-fonts/oswald';
-import {
-  useFonts as useLato,
-  Lato_400Regular,
-} from '@expo-google-fonts/lato';
- 
+} from "@expo-google-fonts/oswald";
+import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+
+import { theme } from "./src/infrastructure/theme";
+import { Navigation } from "./src/infrastructure/navigation";
+
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
+import { FavoritesContextProvider } from "./src/services/favorites/favorites.context";
+import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBUvSVIpUZCykYvSJk_5X3UxO_Ji31zRNg",
-  authDomain: "mobile-app-2e4bb.firebaseapp.com",
-  projectId: "mobile-app-2e4bb",
-  storageBucket: "mobile-app-2e4bb.appspot.com",
-  messagingSenderId: "669833080773",
-  appId: "1:669833080773:web:28bbd71cb6e63eb07e65ac"
+  apiKey: "AIzaSyBmKwzXIQ_7iufDh4U6GyU_4Wc-hyDEnf8",
+  authDomain: "mealstogo-b2612.firebaseapp.com",
+  projectId: "mealstogo-b2612",
+  storageBucket: "mealstogo-b2612.appspot.com",
+  messagingSenderId: "158582890553",
+  appId: "1:158582890553:web:2ef50439fcd80f2ede2de8",
 };
 
-
- 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
-}else {
-  firebase.app(); // if already initialized, use that one
 }
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
+
   const [latoLoaded] = useLato({
     Lato_400Regular,
   });
 
-  if (!oswaldLoaded ||  !latoLoaded) {
-    return null
+  if (!oswaldLoaded || !latoLoaded) {
+    return null;
   }
-   return (
+
+  return (
     <>
-    <ThemeProvider theme={theme}>
-      <FavoritesContextProvider>
-     <LocationContextProvider>
-     
-     <RestaurantsContextProvider>
+      <ThemeProvider theme={theme}>
+        <AuthenticationContextProvider>
 
-       <Navigation />
-    </RestaurantsContextProvider>
-    </LocationContextProvider>
-    </FavoritesContextProvider>
- 
-  </ThemeProvider>
+           <FavoritesContextProvider>
+            <LocationContextProvider>
+              <RestaurantsContextProvider>
+                <Navigation />
+              </RestaurantsContextProvider>
+            </LocationContextProvider>
+          </FavoritesContextProvider>
+          </AuthenticationContextProvider>
+
+       </ThemeProvider>
       <ExpoStatusBar style="auto" />
-
     </>
-    
-
   );
-
-   }
-
+}

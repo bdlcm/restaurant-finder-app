@@ -15,7 +15,6 @@ import {
 } from "../components/restaurant-info-card-styles.component";
 import { Favorites } from "../../../components/favorites/favorites.component";
 import { View } from "react-native";
-import { FavoritesContext } from "../../../services/favorites/favorites.context";
 
 export const RestaurantsInfoCard = ({ restaurant = {} }) => {
   const {
