@@ -15,8 +15,10 @@ module.exports.geocodeRequest = (request, response, client) => {
 
       timeout:1000,
   }).then((result) => {
+       
       return response.json(result.data)
   }).catch((err) => {
+ 
       response.status(400);
      return response.send(err.response.data.error_message)
    });
