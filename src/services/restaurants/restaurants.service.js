@@ -9,8 +9,6 @@ export const restaurantsRequest = (location) => {
 
 export const restaurantsTransform = ({ results = [] }) => {
   const mapResults = results.map((restaurant) => {
-
-
     return {
       ...restaurant,
       isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,

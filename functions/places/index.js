@@ -1,5 +1,5 @@
 const { mocks, addMockImage } = require("./mock");
-const url = require("url");
+const {URL} = require("url");
 const functions = require("firebase-functions");
 
 const addGoogleImage = (restaurant) => {
@@ -11,7 +11,7 @@ const addGoogleImage = (restaurant) => {
     return restaurant;
   }
   restaurant.photos = [
-    `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${ref}&key=${
+    `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${ref}&key=${
       functions.config().google.key
     }`,
   ];
@@ -19,7 +19,8 @@ const addGoogleImage = (restaurant) => {
 };
 
 module.exports.placesRequest = (request, response, client) => {
-  const { location, mock } = url.parse(request.url, true).query;
+  const { location, mock } = request.query;
+
   if (mock === "true") {
     const data = mocks[location];
     if (data) {
