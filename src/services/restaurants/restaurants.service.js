@@ -1,11 +1,17 @@
 import camelize from "camelize";
 import { host } from "../../utils/env";
 
-export const restaurantsRequest = (location) => {
-  return fetch(`${host}/placesNearby?location=${location}`).then((res) => {
-    return res.json();
-  });
-};
+export async function restaurantsRequest(location) {
+  try {
+    const res = await fetch(`${host}/placesNearby?location=${location}`);
+    console.log("response", `${host}/placesNearby?location=${location}`);
+    const response = await res.json();
+   
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 export const restaurantsTransform = ({ results = [] }) => {
   const mapResults = results.map((restaurant) => {

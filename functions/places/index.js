@@ -19,16 +19,16 @@ const addGoogleImage = (restaurant) => {
 };
 
 module.exports.placesRequest = (request, response, client) => {
-  const { location, mock } = request.query;
+  const { location } = request.query;
 
-  if (mock === "true") {
-    const data = mocks[location];
-    if (data) {
-      data.results = data.results.map(addMockImage);
-    }
+  // if (mock === "true") {
+  //   const data = mocks[location];
+  //   if (data) {
+  //     data.results = data.results.map(addMockImage);
+  //   }
 
-    return response.json(data);
-  }
+  //   return response.json(data);
+  // }
   client
     .placesNearby({
       params: {

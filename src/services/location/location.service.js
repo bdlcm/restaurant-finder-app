@@ -1,11 +1,20 @@
 import camelize from "camelize";
 import { host } from "../../utils/env";
 
-export const locationRequest = (searchTerm) => {
-  return fetch(`${host}/geocode?city=${searchTerm}`).then((res) => {
-    return res.json();
-  });
-};
+export async function locationRequest(searchTerm) {
+  // return fetch(`${host}/geocode?city=${searchTerm}`)
+  //   .then((res) => {
+  //     console.log("response.json() => ", res.json());
+  //     return res.json();
+
+  try {
+    const res = await fetch(`${host}/geocode?city=${searchTerm}`);
+    const response = await res.json();
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 export const locationTransform = (result) => {
   const formattedResponse = camelize(result);
