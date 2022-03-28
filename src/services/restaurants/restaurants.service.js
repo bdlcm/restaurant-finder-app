@@ -6,7 +6,6 @@ export async function restaurantsRequest(location) {
     const res = await fetch(`${host}/placesNearby?location=${location}`);
     console.log("response", `${host}/placesNearby?location=${location}`);
     const response = await res.json();
-   
     return response;
   } catch (error) {
     console.error(error);

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { colors } from "../../../infrastructure/theme/colors";
 import {
   AccountBackground,
   AccountVeil,
@@ -9,13 +10,16 @@ import {
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { ActivityIndicator } from "react-native-paper";
 
 export const RegisterScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  const { onRegistration, error } = useContext(AuthenticationContext);
+  const { onRegistration, isLoading, error } = useContext(
+    AuthenticationContext
+  );
   return (
     <AccountBackground>
       <AccountVeil />
@@ -31,7 +35,7 @@ export const RegisterScreen = () => {
         <Spacer size="large">
           <AuthInput
             label="Password"
-             textContentType="password"
+            textContentType="password"
             secureTextEntry
             autoCapitalize="none"
             onChangeText={(p) => setPassword(p)}
@@ -52,13 +56,17 @@ export const RegisterScreen = () => {
           </Spacer>
         )}
         <Spacer size="large">
-          <AccountButton
-            icon="mail"
-            mode="contained"
-            onPress={() => onRegistration(email, password, repeatPassword)}
-          >
-            Register
-          </AccountButton>
+          {!isLoading ? (
+            <AccountButton
+              icon="mail"
+              mode="contained"
+              onPress={() => onRegistration(email, password, repeatPassword)}
+            >
+              Register
+            </AccountButton>
+          ) : (
+            <ActivityIndicator animating={true} color={colors.brand.primary} />
+          )}
         </Spacer>
       </AccountContainer>
     </AccountBackground>

@@ -1,5 +1,5 @@
 import React from "react";
-import { AccountButton, TextInput } from "../components/account.styles";
+import { AccountButton } from "../components/account.styles";
 
 import {
   AccountBackground,
@@ -21,7 +21,7 @@ export const AccountScreen = ({ navigation }) => {
         </AccountButton>
 
         <AccountButton
-          icon="lock-open-outline"
+          icon="mail"
           mode="contained"
           onPress={() => navigation.navigate("Register")}
         >
