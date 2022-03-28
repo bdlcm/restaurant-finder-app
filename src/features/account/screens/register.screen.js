@@ -31,8 +31,7 @@ export const RegisterScreen = () => {
         <Spacer size="large">
           <AuthInput
             label="Password"
-            value={password}
-            textContentType="password"
+             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
             onChangeText={(p) => setPassword(p)}
@@ -41,7 +40,6 @@ export const RegisterScreen = () => {
         <Spacer size="large">
           <AuthInput
             label="Repeat password"
-            value={password}
             textContentType="password"
             secureTextEntry
             autoCapitalize="none"
@@ -55,7 +53,7 @@ export const RegisterScreen = () => {
         )}
         <Spacer size="large">
           <AccountButton
-            icon="lock-open-outline"
+            icon="mail"
             mode="contained"
             onPress={() => onRegistration(email, password, repeatPassword)}
           >
