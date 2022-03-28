@@ -5,18 +5,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { SafeArea } from "../../components/utility/safe-area.components";
 import { RestaurantNavigator } from "./restaurant.navigator";
 import { MapScreen } from "../../features/restaurants/screens/map/map.screen";
- 
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { FavoritesContextProvider } from "../../services/favorites/favorites.context";
-
+import { SettingsScreen } from "../../features/settings/settings.screen";
 const Tab = createBottomTabNavigator();
 
-const Settings = () => (
-  <SafeArea>
-    <Text>Settings</Text>
-  </SafeArea>
-);
+ 
 const Map = () => (
   <SafeArea>
     <Text>Map</Text>
@@ -54,7 +49,7 @@ export const AppNavigator = () => (
           <Tab.Screen name="Restaurants" component={RestaurantNavigator} />
 
           <Tab.Screen name="Map" component={MapScreen} />
-          <Tab.Screen name="Settings" component={Settings} />
+          <Tab.Screen name="Settings" component={SettingsScreen} />
         </Tab.Navigator>
       </RestaurantsContextProvider>
     </LocationContextProvider>

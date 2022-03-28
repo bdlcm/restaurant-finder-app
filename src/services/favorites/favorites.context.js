@@ -50,7 +50,6 @@ export const FavoritesContextProvider = ({ children }) => {
     if (user) {
       saveFavourites(favorites, user.uid);
     }
-
   }, [favorites, user]);
 
   return (

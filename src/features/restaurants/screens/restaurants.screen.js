@@ -13,7 +13,7 @@ import { Search } from "../components/search.component";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
 import { TouchableOpacity } from "react-native";
 import { Spacer } from "../../../components/spacer/spacer.component";
- 
+
 const LowerTouchableOpacity = styled(TouchableOpacity)`
   z-index: 2;
 `;
