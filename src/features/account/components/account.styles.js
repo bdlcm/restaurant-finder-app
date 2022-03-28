@@ -3,6 +3,14 @@ import { View } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import { colors } from "../../../infrastructure/theme/colors";
 
+export const AnimationWrapper = styled.View`
+  width: 70%;
+  height: 20%;
+  position: absolute;
+  top: 10px;
+  margin: ${(props) => props.theme.space[4]};
+`;
+
 export const AccountBackground = styled.ImageBackground.attrs({
   source: require("../../../../assets/donuts.jpg"),
 })`

@@ -27,6 +27,7 @@
     "firebase": "7.9.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.19.0",
+    "lottie-react-native": "~2.6.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
