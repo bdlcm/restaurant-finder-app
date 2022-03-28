@@ -13,17 +13,15 @@ export const AccountScreen = ({ navigation }) => {
     <AccountBackground>
       <AccountVeil />
       <AnimationWrapper>
-          <LottieView
-            key="animation"
-            autoPlay
-            resizeMode="cover"
-            loop
-            source={require("../../../../assets/pin.json")}
-          />
-        </AnimationWrapper>
+        <LottieView
+          key="animation"
+          autoPlay
+          resizeMode="cover"
+          loop
+          source={require("../../../../assets/pin.json")}
+        />
+      </AnimationWrapper>
       <AccountContainer>
-
-
         <AccountButton
           icon="lock-open-outline"
           mode="contained"

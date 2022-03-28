@@ -12,7 +12,7 @@ export const AnimationWrapper = styled.View`
 `;
 
 export const AccountBackground = styled.ImageBackground.attrs({
-  source: require("../../../../assets/donuts.jpg"),
+  source: require("../../../../assets/donuts3.jpg"),
 })`
   flex: 1;
   align-items: center;

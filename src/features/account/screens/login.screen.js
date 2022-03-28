@@ -45,7 +45,7 @@ export const LoginScreen = () => {
           </Spacer>
         )}
         <Spacer size="large">
-          {/* {!isLoading ? (
+          {!isLoading ? (
             <AccountButton
               icon="lock-open-outline"
               mode="contained"
@@ -55,14 +55,7 @@ export const LoginScreen = () => {
             </AccountButton>
           ) : (
             <ActivityIndicator animating={true} color={colors.brand.primary} />
-          )} */}
-          <AccountButton
-            icon="lock-open-outline"
-            mode="contained"
-            onPress={() => onLogin(email, password)}
-          >
-            Login
-          </AccountButton>
+          )}
         </Spacer>
       </AccountContainer>
     </AccountBackground>
