@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import { SafeArea } from "../../../components/utility/safe-area.components";
 import { List } from "react-native-paper";
+import { Accordion } from "../components/restaurant-detail-accordion-styles.component";
 import { ScrollView } from "react-native";
 
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
+import { colors } from "../../../infrastructure/theme/colors";
 
 export const RestaurantsDetailScreen = ({ route }) => {
   const { restaurant } = route.params;
-  const [breakfastExpanded, setBreakfastExpanded] = React.useState(false);
-  const [lunchExpanded, setLunchExpanded] = React.useState(false);
-  const [dinnerExpanded, setDinnerExpanded] = React.useState(false);
-  const [drinksExpanded, setDrinksExpanded] = React.useState(false);
+  const [breakfastExpanded, setBreakfastExpanded] = useState(false);
+  const [lunchExpanded, setLunchExpanded] = useState(false);
+  const [dinnerExpanded, setDinnerExpanded] = useState(false);
+  const [drinksExpanded, setDrinksExpanded] = useState(false);
 
   return (
     <SafeArea>
       <RestaurantsInfoCard restaurant={restaurant} />
       <ScrollView>
         <List.Accordion
+          theme={{ colors: { primary: colors.brand.secondary } }}
           title="Breakfast"
           left={(props) => <List.Icon {...props} icon="bread-slice" />}
           expanded={breakfastExpanded}
@@ -26,6 +29,7 @@ export const RestaurantsDetailScreen = ({ route }) => {
           <List.Item title="Waffles" />
         </List.Accordion>
         <List.Accordion
+          theme={{ colors: { primary: colors.brand.secondary } }}
           title="Lunch"
           left={(props) => <List.Icon {...props} icon="pizza" />}
           expanded={lunchExpanded}
@@ -35,6 +39,7 @@ export const RestaurantsDetailScreen = ({ route }) => {
           <List.Item title="Cheeseburger" />
         </List.Accordion>
         <List.Accordion
+          theme={{ colors: { primary: colors.brand.secondary } }}
           title="Dinner"
           left={(props) => <List.Icon {...props} icon="food-variant" />}
           expanded={dinnerExpanded}
@@ -44,6 +49,7 @@ export const RestaurantsDetailScreen = ({ route }) => {
           <List.Item title="Roasted Chicken" />
         </List.Accordion>
         <List.Accordion
+          theme={{ colors: { primary: colors.brand.secondary } }}
           title="Drinks"
           left={(props) => <List.Icon {...props} icon="cup" />}
           expanded={drinksExpanded}

@@ -11,13 +11,6 @@ import { FavoritesContextProvider } from "../../services/favorites/favorites.con
 import { SettingsScreen } from "../../features/settings/settings.screen";
 const Tab = createBottomTabNavigator();
 
- 
-const Map = () => (
-  <SafeArea>
-    <Text>Map</Text>
-  </SafeArea>
-);
-
 export const AppNavigator = () => (
   <FavoritesContextProvider>
     <LocationContextProvider>
@@ -42,7 +35,7 @@ export const AppNavigator = () => (
             },
           })}
           tabBarOptions={{
-            activeTintColor: "tomato",
+            activeTintColor: "#0079E0",
             inactiveTintColor: "gray",
           }}
         >
