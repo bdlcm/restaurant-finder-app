@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { SafeArea } from "../../../../components/utility/safe-area.components";
 import { List } from "react-native-paper";
-import { Accordion } from "../../components/restaurant/restaurant-detail-accordion-styles.component";
 import { ScrollView } from "react-native";
 
-import { RestaurantsInfoCard } from "../../components/restaurant/restaurant-info-card-styles.component";
+import { RestaurantsInfoCard } from "../../components/restaurant/restaurant-info-card.component";
 import { colors } from "../../../../infrastructure/theme/colors";
 
 export const RestaurantsDetailScreen = ({ route }) => {
