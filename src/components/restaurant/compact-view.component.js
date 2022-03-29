@@ -29,7 +29,6 @@ const CompactWebview = styled(WebView)`
 
 const Item = styled.View`
   position: relative;
-
   padding: 10px;
   max-width: 120px;
   align-items: center;

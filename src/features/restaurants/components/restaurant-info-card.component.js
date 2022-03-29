@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
@@ -20,9 +20,7 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Pizzare",
 
-    photos = [
-      "https://thumb.tildacdn.com/tild3564-3039-4366-b464-666535626662/-/format/webp/pizza.png",
-    ],
+    photos = ["https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg"],
     vicinity = "Dunckerstrasse",
     isOpenNow = true,
     rating = 4,
@@ -30,28 +28,16 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
     isClosedTemporarily = true,
   } = restaurant;
 
-  const ratingArray = Array.from(new Array(Math.floor(rating)));
   return (
     <RestaurantCard elevation={5}>
       <View>
         <Favorites restaurant={restaurant} />
 
-        <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+        <RestaurantCardCover source={{ uri: photos[0] }} />
       </View>
       <Info>
         <Text variant="label">{name}</Text>
         <Section>
-          <Rating>
-            {ratingArray.map((_, i) => (
-              <SvgXml
-                key={`star-${placeId}-${i}`}
-                xml={star}
-                width={20}
-                height={20}
-              />
-            ))}
-          </Rating>
-
           <OpenIcon>
             {isClosedTemporarily && (
               <Text variant="error">CLOSED TEMPORARILY</Text>

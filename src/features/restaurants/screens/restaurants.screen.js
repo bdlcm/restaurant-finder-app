@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useContext, useState } from "react";
-import { ActivityIndicator, Colors } from "react-native-paper";
+import { ActivityIndicator, Card, Colors } from "react-native-paper";
 import { SafeArea } from "../../../components/utility/safe-area.components";
 import { FlatList, View } from "react-native";
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
@@ -13,14 +13,15 @@ import { Search } from "../components/search.component";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
 import { TouchableOpacity } from "react-native";
 import { Spacer } from "../../../components/spacer/spacer.component";
+import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
+import { colors } from "../../../infrastructure/theme/colors";
 
 const LowerTouchableOpacity = styled(TouchableOpacity)`
   z-index: 2;
 `;
 
 export const RestaurantsScreen = ({ navigation }) => {
-  const { isLoading, error, restaurants } = useContext(RestaurantsContext);
-  const [expanded, setExpanded] = React.useState(true);
+  const { isLoading, restaurants } = useContext(RestaurantsContext);
   const { favorites } = useContext(FavoritesContext);
   const [isToggled, setIsToggled] = useState(false);
 
@@ -32,7 +33,7 @@ export const RestaurantsScreen = ({ navigation }) => {
             size={50}
             style={{ marginLeft: -25 }}
             animating={true}
-            color={Colors.blue300}
+            color={colors.brand.secondary}
           />
         </View>
       )}
@@ -43,6 +44,7 @@ export const RestaurantsScreen = ({ navigation }) => {
       )}
       <FlatList
         data={restaurants}
+        initialNumToRender={200}
         renderItem={({ item }) => {
           return (
             <LowerTouchableOpacity
@@ -51,12 +53,20 @@ export const RestaurantsScreen = ({ navigation }) => {
               }
             >
               <Spacer position="bottom" size="large">
-                <RestaurantsInfoCard restaurant={item} />
+                <Card source={{ uri: item.photos[0] }} />
+                <RestaurantsInfoCard
+                  restaurant={item}
+                  onPress={() =>
+                    navigation.navigate("RestaurantDetail", {
+                      restaurant: item,
+                    })
+                  }
+                />
               </Spacer>
             </LowerTouchableOpacity>
           );
         }}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item, i) => `${item.name}-${i}`}
         contentContainerStyle={{ padding: 16 }}
       />
     </SafeArea>
