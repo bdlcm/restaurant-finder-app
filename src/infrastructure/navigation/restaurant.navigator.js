@@ -1,5 +1,5 @@
 import React from "react";
- import {
+import {
   createStackNavigator,
   TransitionPresets,
 } from "@react-navigation/stack";
