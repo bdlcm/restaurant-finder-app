@@ -19,7 +19,7 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
   const ratingArray = Array.from(new Array(Math.floor(restaurant.rating)));
 
   return (
-    <RestaurantCard elevation={5}>
+    <RestaurantCard elevation={2}>
       <View>
         <Favorites restaurant={restaurant} />
 

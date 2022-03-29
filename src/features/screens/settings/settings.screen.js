@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
-import { SafeArea } from "../../components/utility/safe-area.components";
-import { AuthenticationContext } from "../../services/authentication/authentication.context";
-import { AccountButton } from "../account/components/account.styles";
+import { SafeArea } from "../../../components/utility/safe-area.components";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { AccountButton } from "../../account/components/account.styles";
 
 export const SettingsScreen = ({ route }) => {
   const { onLogOut } = useContext(AuthenticationContext);

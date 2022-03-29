@@ -1,14 +1,12 @@
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { Text } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { SafeArea } from "../../components/utility/safe-area.components";
-import { RestaurantNavigator } from "./restaurant.navigator";
-import { MapScreen } from "../../features/restaurants/screens/map/map.screen";
+ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+ import { RestaurantNavigator } from "./restaurant.navigator";
+import { MapScreen } from "../../features/screens/map/map.screen";
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { FavoritesContextProvider } from "../../services/favorites/favorites.context";
-import { SettingsScreen } from "../../features/settings/settings.screen";
+import { SettingsScreen } from "../../features/screens/settings/settings.screen";
 const Tab = createBottomTabNavigator();
 
 export const AppNavigator = () => (
