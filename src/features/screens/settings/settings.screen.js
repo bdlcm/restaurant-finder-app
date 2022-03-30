@@ -10,39 +10,42 @@ import {
 
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
-import { FavoritesScreen } from "../favorites/favorites.screen";
+import { AccountVeil } from "../../account/components/account.styles";
+
 export const SettingsScreen = ({ navigation }) => {
   const { onLogOut, user } = useContext(AuthenticationContext);
 
   return (
-    <SafeArea>
-      <SettingBackground>
-        <SettingAvatarContainer>
-          <Avatar.Icon size={120} icon={"human"} />
-          <Spacer position="top" size="large">
-            <Text variant="caption">{user.email}</Text>
-          </Spacer>
-        </SettingAvatarContainer>
+    <SettingBackground>
+      <AccountVeil>
+        <SafeArea>
+          <SettingAvatarContainer>
+            <Avatar.Icon size={120} icon={"human"} />
+            <Spacer position="top" size="large">
+              <Text variant="caption">{user.email}</Text>
+            </Spacer>
+          </SettingAvatarContainer>
 
-        <List.Section>
-          <SettingItem
-            title="Favourites"
-            description="View your favourites"
-            left={(props) => (
-              <List.Icon {...props} color="black" icon="heart" />
-            )}
-            onPress={() => navigation.navigate("Favourites")}
-          />
+          <List.Section>
+            <SettingItem
+              title="Favourites"
+              description="View your favourites"
+              left={(props) => (
+                <List.Icon {...props} color="black" icon="heart" />
+              )}
+              onPress={() => navigation.navigate("Favourites")}
+            />
 
-          <SettingItem
-            title="Log out"
-            left={(props) => (
-              <List.Icon {...props} color="black" icon="lock-open-outline" />
-            )}
-            onPress={() => onLogOut()}
-          />
-        </List.Section>
-      </SettingBackground>
-    </SafeArea>
+            <SettingItem
+              title="Log out"
+              left={(props) => (
+                <List.Icon {...props} color="black" icon="lock-open-outline" />
+              )}
+              onPress={() => onLogOut()}
+            />
+          </List.Section>
+        </SafeArea>
+      </AccountVeil>
+    </SettingBackground>
   );
 };
