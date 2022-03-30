@@ -37,7 +37,7 @@ export const MapScreen = ({ navigation }) => {
           latitude: lat,
           longitude: lng,
           latitudeDelta: latDelta,
-          longitudeDelta: 0.04,
+          longitudeDelta: 0.01,
         }}
       >
         {restaurants.map((restaurant) => {
@@ -66,3 +66,5 @@ export const MapScreen = ({ navigation }) => {
     </>
   );
 };
+
+ 
