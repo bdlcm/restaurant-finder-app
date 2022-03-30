@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import MapView from "react-native-maps";
-import { StyleSheet, Text, View, Dimensions } from "react-native";
 import { LocationContext } from "../../../services/location/location.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { MapCallout } from "../../restaurants/components/map/components/map-callout.component";
 import { useEffect } from "react/cjs/react.development";
-import { Marker } from "react-native-maps";
+import { FavoritesContext } from "../../../services/favorites/favorites.context";
 import styled from "styled-components/native";
+import { View } from "react-native";
+import { FavoritesBar } from "../../../components/favorites/favorites-bar.component";
 import { Search } from "../../restaurants/components/map/search.component";
 
 const Map = styled(MapView)`
@@ -14,10 +15,17 @@ const Map = styled(MapView)`
   width: 100%;
 `;
 
+const FavoritesView = styled.View`
+  position: absolute;
+  bottom: 0%;
+ 
+`;
+
 export const MapScreen = ({ navigation }) => {
   const { location } = useContext(LocationContext);
   const { restaurants = [] } = useContext(RestaurantsContext);
-
+  const { favorites } = useContext(FavoritesContext);
+  const [isToggled, setIsToggled] = useState(false);
   const [latDelta, setLatDelta] = useState(0);
 
   const { lat, lng, viewport } = location;
@@ -62,9 +70,14 @@ export const MapScreen = ({ navigation }) => {
             </MapView.Marker>
           );
         })}
+
+        <FavoritesView>
+          <FavoritesBar
+            favorites={favorites}
+            navigation={navigation.navigate}
+          />
+        </FavoritesView>
       </Map>
     </>
   );
 };
-
- 

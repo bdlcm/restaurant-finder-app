@@ -9,6 +9,7 @@ import { Text } from "../typography/text.component";
 const FavesWrapper = styled(Card)`
   z-index: 999;
   padding: 10px;
+   background-color: rgba(255, 255, 255, 0.3);
 `;
 
 export const FavoritesBar = ({ favorites, navigation }) => {
