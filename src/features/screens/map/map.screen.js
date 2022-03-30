@@ -18,7 +18,6 @@ const Map = styled(MapView)`
 const FavoritesView = styled.View`
   position: absolute;
   bottom: 0%;
- 
 `;
 
 export const MapScreen = ({ navigation }) => {
@@ -27,6 +26,7 @@ export const MapScreen = ({ navigation }) => {
   const { favorites } = useContext(FavoritesContext);
   const [isToggled, setIsToggled] = useState(false);
   const [latDelta, setLatDelta] = useState(0);
+  const [currentFavorites, setFavorites] = useState([]);
 
   const { lat, lng, viewport } = location;
 
@@ -37,6 +37,9 @@ export const MapScreen = ({ navigation }) => {
     setLatDelta(northeastLat - southwestLat);
   }, [location, viewport]);
 
+  useEffect(() => {
+    setFavorites(favorites);
+  }, [favorites]);
   return (
     <>
       <Search />
@@ -73,7 +76,7 @@ export const MapScreen = ({ navigation }) => {
 
         <FavoritesView>
           <FavoritesBar
-            favorites={favorites}
+            favorites={currentFavorites}
             navigation={navigation.navigate}
           />
         </FavoritesView>

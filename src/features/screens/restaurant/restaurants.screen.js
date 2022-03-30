@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native-paper";
 import { SafeArea } from "../../../components/utility/safe-area.components";
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
@@ -19,6 +19,7 @@ export const RestaurantsScreen = ({ navigation }) => {
   const { favorites } = useContext(FavoritesContext);
   const [isToggled, setIsToggled] = useState(false);
 
+ 
   return (
     <SafeArea>
       {isLoading && (
