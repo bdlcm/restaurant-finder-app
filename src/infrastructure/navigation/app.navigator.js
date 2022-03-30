@@ -1,12 +1,12 @@
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
- import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
- import { RestaurantNavigator } from "./restaurant.navigator";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { RestaurantNavigator } from "./restaurant.navigator";
 import { MapScreen } from "../../features/screens/map/map.screen";
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { FavoritesContextProvider } from "../../services/favorites/favorites.context";
-import { SettingsScreen } from "../../features/screens/settings/settings.screen";
+import { SettingsNavigator } from "./settings.navigator";
 const Tab = createBottomTabNavigator();
 
 export const AppNavigator = () => (
@@ -40,7 +40,7 @@ export const AppNavigator = () => (
           <Tab.Screen name="Restaurants" component={RestaurantNavigator} />
 
           <Tab.Screen name="Map" component={MapScreen} />
-          <Tab.Screen name="Settings" component={SettingsScreen} />
+          <Tab.Screen name="Settings" component={SettingsNavigator} />
         </Tab.Navigator>
       </RestaurantsContextProvider>
     </LocationContextProvider>
