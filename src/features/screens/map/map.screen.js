@@ -6,25 +6,19 @@ import { MapCallout } from "../../map/map-callout.component";
 import { useEffect } from "react/cjs/react.development";
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
 import styled from "styled-components/native";
-import { View } from "react-native";
 import { FavoritesBar } from "../../favorites/favorites-bar.component";
 import { Search } from "../../map/search.component";
+import { FavoritesView } from "../../favorites/favorite-bar-styles.component";
 
 const Map = styled(MapView)`
   height: 100%;
   width: 100%;
 `;
 
-const FavoritesView = styled.View`
-  position: absolute;
-  bottom: 0%;
-`;
-
 export const MapScreen = ({ navigation }) => {
   const { location } = useContext(LocationContext);
   const { restaurants = [] } = useContext(RestaurantsContext);
   const { favorites } = useContext(FavoritesContext);
-  const [isToggled, setIsToggled] = useState(false);
   const [latDelta, setLatDelta] = useState(0);
   const [currentFavorites, setFavorites] = useState([]);
 
