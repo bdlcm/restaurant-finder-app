@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { SvgXml } from "react-native-svg";
-import star from "../../../../assets/star";
-import open from "../../../../assets/open";
-import { Spacer } from "../../../components/spacer/spacer.component";
-import { Text } from "../../../components/typography/text.component";
+import star from "../../../assets/star";
+import open from "../../../assets/open";
+import { Spacer } from "../../components/spacer/spacer.component";
+import { Text } from "../../components/typography/text.component";
 import {
   RestaurantCard,
   RestaurantCardCover,
@@ -12,7 +12,7 @@ import {
   OpenIcon,
   Section,
 } from "./restaurant-info-card-styles.component";
-import { Favorites } from "../../favorites/favorites.component";
+import { Favorites } from "../favorites/favorites.component";
 import { View } from "react-native";
 
 export const RestaurantsInfoCard = ({ restaurant = {} }) => {

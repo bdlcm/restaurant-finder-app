@@ -3,10 +3,10 @@ import styled from "styled-components/native";
 import WebView from "react-native-webview";
 import { Platform } from "react-native";
 
-import { Text } from "../../../components/typography/text.component";
+import { Text } from "../../components/typography/text.component";
 
 import { TouchableOpacity } from "react-native";
-import { Favorites } from "../../favorites/favorites.component";
+import { Favorites } from "../favorites/favorites.component";
 
 const FavButton = styled(TouchableOpacity)`
   position: absolute;

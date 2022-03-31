@@ -4,7 +4,7 @@ import { host } from "../../utils/env";
 export async function restaurantsRequest(location) {
   try {
     const res = await fetch(`${host}/placesNearby?location=${location}`);
-     const response = await res.json();
+    const response = await res.json();
     return response;
   } catch (error) {
     console.error(error);
