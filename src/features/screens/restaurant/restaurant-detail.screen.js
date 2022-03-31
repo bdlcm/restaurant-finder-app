@@ -3,7 +3,7 @@ import { SafeArea } from "../../../components/utility/safe-area.components";
 import { List } from "react-native-paper";
 import { ScrollView } from "react-native";
 
-import { RestaurantsInfoCard } from "../../restaurants/components/restaurant/restaurant-info-card.component";
+import { RestaurantsInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 import { colors } from "../../../infrastructure/theme/colors";
 
 export const RestaurantsDetailScreen = ({ route }) => {

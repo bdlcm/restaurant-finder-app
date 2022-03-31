@@ -4,11 +4,11 @@ import { ActivityIndicator } from "react-native-paper";
 import { SafeArea } from "../../../components/utility/safe-area.components";
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-import { RestaurantList } from "../../restaurants/components/restaurant/restaurant-list-styles.component";
-import { FavoritesBar } from "../../../components/favorites/favorites-bar.component";
+import { RestaurantList } from "../../restaurants/components/restaurant-list-styles.component";
+import { FavoritesBar } from "../../favorites/favorites-bar.component";
 
 import { Search } from "../../restaurants/components/search.component";
-import { RestaurantsInfoCard } from "../../restaurants/components/restaurant/restaurant-info-card.component";
+import { RestaurantsInfoCard } from "../../restaurants/components/restaurant-info-card.component";
 import { TouchableOpacity, View } from "react-native";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { colors } from "../../../infrastructure/theme/colors";

@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { Card } from "react-native-paper";
 import styled from "styled-components/native";
 import { TouchableOpacity, ScrollView } from "react-native";
-import { CompactView } from "../restaurant/compact-view.component";
-import { Spacer } from "../spacer/spacer.component";
-import { Text } from "../typography/text.component";
+import { CompactView } from "../restaurants/components/compact-view.component";
+import { Spacer } from "../../components/spacer/spacer.component";
+import { Text } from "../../components/typography/text.component";
  
 const FavesWrapper = styled(Card)`
   z-index: 999;

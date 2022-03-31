@@ -6,7 +6,7 @@ import {
   SettingItem,
   SettingAvatarContainer,
   SettingBackground,
-} from "../settings/components/settings-styles.component";
+} from "../../settings/settings-styles.component";
 
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";

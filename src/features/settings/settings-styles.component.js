@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import { List } from "react-native-paper";
-import { View } from "react-native-web";
-import { SafeAreaView } from "react-native-safe-area-context";
+ import { SafeAreaView } from "react-native-safe-area-context";
 
 export const SettingTransparentSafeArea = styled(SafeAreaView)`
   background-color: rgba(241, 240, 234, 0.2);
 `;
 
 export const SettingBackground = styled.ImageBackground.attrs({
-  source: require("../../../../../assets/donuts3.jpg"),
+  source: require("../../../assets/donuts3.jpg"),
 })`
   position: absolute;
   width: 100%;
