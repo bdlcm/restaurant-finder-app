@@ -5,12 +5,7 @@ import { TouchableOpacity, ScrollView } from "react-native";
 import { CompactView } from "../restaurants/compact-view.component";
 import { Spacer } from "../../components/spacer/spacer.component";
 import { Text } from "../../components/typography/text.component";
- 
-const FavesWrapper = styled(Card)`
-  z-index: 999;
-  padding: 10px;
-   background-color: rgba(255, 255, 255, 0.3);
-`;
+import { FavesWrapper } from "./favorite-bar-styles.component";
 
 export const FavoritesBar = ({ favorites, navigation }) => {
   //   const { favorites } = useContext(FavoritesContext);

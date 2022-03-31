@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { View } from "react-native";
 import { Button, TextInput } from "react-native-paper";
-import { colors } from "../../../infrastructure/theme/colors";
+import { colors } from "../../infrastructure/theme/colors";
 
 export const AnimationWrapper = styled.View`
   width: 70%;
@@ -12,7 +12,7 @@ export const AnimationWrapper = styled.View`
 `;
 
 export const AccountBackground = styled.ImageBackground.attrs({
-  source: require("../../../../assets/donuts3.jpg"),
+  source: require("../../../assets/donuts3.jpg"),
 })`
   flex: 1;
   align-items: center;

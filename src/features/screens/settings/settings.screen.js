@@ -10,7 +10,7 @@ import {
 
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
-import { AccountVeil } from "../../account/components/account.styles";
+import { AccountVeil } from "../../account/account.styles";
 
 export const SettingsScreen = ({ navigation }) => {
   const { onLogOut, user } = useContext(AuthenticationContext);

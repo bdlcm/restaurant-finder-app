@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { List } from "react-native-paper";
- import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const SettingTransparentSafeArea = styled(SafeAreaView)`
   background-color: rgba(241, 240, 234, 0.2);

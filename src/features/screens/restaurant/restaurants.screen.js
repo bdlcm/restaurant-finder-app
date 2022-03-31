@@ -19,7 +19,6 @@ export const RestaurantsScreen = ({ navigation }) => {
   const { favorites } = useContext(FavoritesContext);
   const [isToggled, setIsToggled] = useState(false);
 
- 
   return (
     <SafeArea>
       {isLoading && (

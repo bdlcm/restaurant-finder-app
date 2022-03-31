@@ -6,7 +6,7 @@ import {
   AccountContainer,
   AccountButton,
   AuthInput,
-} from "../components/account.styles";
+} from "../../account/account.styles";
 import { colors } from "../../../infrastructure/theme/colors";
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";

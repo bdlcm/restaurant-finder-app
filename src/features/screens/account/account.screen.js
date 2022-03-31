@@ -1,12 +1,12 @@
 import React from "react";
-import { AccountButton } from "../components/account.styles";
+import { AccountButton } from "../../account/account.styles";
 import LottieView from "lottie-react-native";
 import {
   AccountBackground,
   AccountContainer,
   AccountVeil,
   AnimationWrapper,
-} from "../components/account.styles";
+} from "../../account/account.styles";
 
 export const AccountScreen = ({ navigation }) => {
   return (
