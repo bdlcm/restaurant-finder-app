@@ -56,10 +56,6 @@ export const AuthenticationContextProvider = ({ children }) => {
       });
   };
 
-  // useEffect(() => {
-  //   checkAuth();
-  // }, []);
-
   return (
     <AuthenticationContext.Provider
       value={{

@@ -15,17 +15,15 @@ export const AppNavigator = () => (
       <RestaurantsContextProvider>
         <Tab.Navigator
           screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, color, size }) => {
+            tabBarIcon: ({ color, size }) => {
               let iconName;
 
               if (route.name === "Restaurants") {
-                iconName = focused
-                  ? "ios-restaurant"
-                  : "ios-restaurant-outline";
+                iconName = "ios-restaurant";
               } else if (route.name === "Settings") {
-                iconName = focused ? "ios-settings" : "ios-settings-outline";
+                iconName = "ios-settings";
               } else if (route.name === "Map") {
-                iconName = focused ? "ios-map" : "ios-map-outline";
+                iconName = "ios-map";
               }
 
               // You can return any component that you like here!
@@ -34,7 +32,7 @@ export const AppNavigator = () => (
           })}
           tabBarOptions={{
             activeTintColor: "#0079E0",
-            inactiveTintColor: "gray",
+            inactiveTintColor: "#8fb7d9",
           }}
         >
           <Tab.Screen name="Restaurants" component={RestaurantNavigator} />

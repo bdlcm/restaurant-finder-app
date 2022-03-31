@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SafeArea } from "../../../components/utility/safe-area.components";
 import { List } from "react-native-paper";
 import { ScrollView } from "react-native";

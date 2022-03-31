@@ -26,7 +26,7 @@ import {
 
 import { RestaurantsContext } from "../../services/restaurants/restaurants.context";
 
- const ViewTypes = {
+const ViewTypes = {
   FULL: 0,
   HALF_LEFT: 1,
   HALF_RIGHT: 2,
@@ -93,7 +93,6 @@ export const ListView = memo(() => {
   );
 
   const loadMore = () => {
-    console.log("end");
     load([...data, ...generateArray(pageSize)], true);
   };
 
@@ -201,12 +200,9 @@ const rowRenderer = (type, data) => {
   } = data;
 
   return (
-      <View>
-   <Card>
-      <Card.Cover  source={{ uri: data.photos[0] }} />
-    </Card>
-      </View>
- 
+    <View>
+      <Card />
+    </View>
   );
 };
 

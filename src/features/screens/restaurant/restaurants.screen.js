@@ -6,7 +6,6 @@ import { FavoritesContext } from "../../../services/favorites/favorites.context"
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { RestaurantList } from "../../restaurants/restaurant-list-styles.component";
 import { FavoritesBar } from "../../favorites/favorites-bar.component";
-
 import { Search } from "../../restaurants/search.component";
 import { RestaurantsInfoCard } from "../../restaurants/restaurant-info-card.component";
 import { TouchableOpacity, View } from "react-native";
@@ -38,7 +37,6 @@ export const RestaurantsScreen = ({ navigation }) => {
       )}
       <RestaurantList
         data={restaurants}
-        extr
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
@@ -50,6 +48,7 @@ export const RestaurantsScreen = ({ navigation }) => {
             >
               <Spacer position="bottom" size="large">
                 <FadeInView>
+                
                   <RestaurantsInfoCard restaurant={item} />
                 </FadeInView>
               </Spacer>

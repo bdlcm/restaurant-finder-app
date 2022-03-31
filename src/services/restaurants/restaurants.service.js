@@ -1,9 +1,11 @@
 import camelize from "camelize";
-import { host } from "../../utils/env";
+import { host, mocked } from "../../utils/env";
 
 export async function restaurantsRequest(location) {
   try {
-    const res = await fetch(`${host}/placesNearby?location=${location}`);
+    const res = await fetch(
+      `${host}/placesNearby?location=${location}&mock=${mocked}`
+    );
     const response = await res.json();
     return response;
   } catch (error) {
