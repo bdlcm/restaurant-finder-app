@@ -36,7 +36,8 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
           <RestaurantCardCover
             source={{
               uri:
-                mockImages[Math.ceil(Math.random() * (mockImages.length - 1))],
+                 mockImages[Math.ceil(Math.random() * (mockImages.length - 1))],
+                //restaurant.photos[0],
             }}
           />
         ) : (

@@ -13,7 +13,7 @@ export const RestaurantNavigator = () => {
     <RestaurantStack.Navigator
       headerMode="none"
       screenOptions={{
-        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        ...TransitionPresets.ModalPresentationIOS,
       }}
     >
       <RestaurantStack.Screen
