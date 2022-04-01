@@ -33,7 +33,7 @@ export const FavoritesScreen = ({ navigation }) => {
               </TouchableOpacity>
             );
           }}
-          keyExtractor={(item) => item.name}
+          keyExtractor={(item, i) => item.placeId}
         />
       ) : (
         <Text center> No favorites yet</Text>

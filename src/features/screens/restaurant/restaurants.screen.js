@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { ActivityIndicator } from "react-native-paper";
 import { SafeArea } from "../../../components/utility/safe-area.components";
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
@@ -48,14 +48,13 @@ export const RestaurantsScreen = ({ navigation }) => {
             >
               <Spacer position="bottom" size="large">
                 <FadeInView>
-                
                   <RestaurantsInfoCard restaurant={item} />
                 </FadeInView>
               </Spacer>
             </TouchableOpacity>
           );
         }}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(item) => item.placeId}
       />
     </SafeArea>
   );

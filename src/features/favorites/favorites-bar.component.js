@@ -8,7 +8,6 @@ import { Text } from "../../components/typography/text.component";
 import { FavesWrapper } from "./favorite-bar-styles.component";
 
 export const FavoritesBar = ({ favorites, navigation }) => {
-  //   const { favorites } = useContext(FavoritesContext);
   if (!favorites.length) {
     return null;
   }
@@ -19,8 +18,8 @@ export const FavoritesBar = ({ favorites, navigation }) => {
       </Text>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {favorites.map((restaurant) => {
-          const key = restaurant.name;
+        {favorites.map((restaurant, i) => {
+          const key = restaurant.placeId;
           return (
             <Spacer key={key} position="left" size="large">
               <TouchableOpacity

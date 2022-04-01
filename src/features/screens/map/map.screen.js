@@ -48,7 +48,7 @@ export const MapScreen = ({ navigation }) => {
         {restaurants.map((restaurant) => {
           return (
             <MapView.Marker
-              key={restaurant.name}
+              key={restaurant.placeId}
               title={restaurant.name}
               coordinate={{
                 latitude: restaurant.geometry.location.lat,
