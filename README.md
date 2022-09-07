@@ -5,7 +5,7 @@
 
 Must have Expo, Yarn and Xcode installed. Firebase branch contains Firebase integration (Work in Progress).
 
-Run `Yarn add ios` and `Yarn run ios` inside the project folder to run on an ios emulator. 
+Run `yarn` inside project folder. Then run `yarn add ios` and `yarn run ios` inside the project folder to run on an ios emulator. 
 
 React Native app. View restaurants, their menus, favorite them, see them on a map. 
 
