@@ -1,4 +1,4 @@
-# WOLT clone app
+# Restaurant Finder app
 
 
 
